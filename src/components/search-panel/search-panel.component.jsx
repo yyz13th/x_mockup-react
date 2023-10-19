@@ -1,3 +1,4 @@
+import './search-panel.styles.css';
 const SearchPanel = () => {
     return (
         <input 
