@@ -3,11 +3,18 @@ import { faHeart, faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './post-list-item.styles.css'
 
-const PostListItem = () => {
+const PostListItem = ({label, important = false}) => {
+
+
+    let classNames = 'app-list-item d-flex justify-content-between';
+    if (important) {
+        classNames +=' important';
+    }
+
     return(
-        <li className="app-list-item d-flex justify-content-between">
+        <div className={classNames}>
             <span className="app-list-item-label">
-                Some Text
+                {label}
             </span>
             <div className="d-flex justify-content-center align-items-center">
                 <button type="button" className="btn-star btn-sm">
@@ -21,7 +28,7 @@ const PostListItem = () => {
                     <FontAwesomeIcon icon={faHeart} />
                 </button>
             </div> 
-        </li>
+        </div>
     )
 }
 
