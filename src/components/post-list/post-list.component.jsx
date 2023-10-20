@@ -1,5 +1,6 @@
 import PostListItem from "../post-list-item/post-list-item.component";
 import './post-list.styles.css';
+import { ListGroup } from "reactstrap";
 
 const PostList = ({posts}) => {
     //look through posts and return template of elements
@@ -18,9 +19,9 @@ const PostList = ({posts}) => {
     });
     return (
         //create list of posts
-        <ul className="app-list list-group">
+        <ListGroup className="app-list">
             {elements}
-        </ul>
+        </ListGroup>
         
     )
 }
