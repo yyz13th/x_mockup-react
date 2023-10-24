@@ -6,31 +6,31 @@ import { Component } from 'react';
 
 export default class PostListitem extends Component {
 
-    constructor (props){
-        super(props);
-        this.state = {
-            important: false,
-            like: false
-        }
-        this.onToggleImportant = this.onToggleImportant.bind(this);
-        this.onToggleLike = this.onToggleLike.bind(this);
-    }
+    // constructor (props){
+    //     super(props);
+    //     this.state = {
+    //         important: false,
+    //         like: false
+    //     }
+    //     this.onToggleImportant = this.onToggleImportant.bind(this);
+    //     this.onToggleLike = this.onToggleLike.bind(this);
+    // }
 
-    onToggleImportant = () => {
-        this.setState(({important}) => ({
-            important: !important
-        }));
-    }
+    // onToggleImportant = () => {
+    //     this.setState(({important}) => ({
+    //         important: !important
+    //     }));
+    // }
 
-    onToggleLike = () => {
-        this.setState(({like}) => ({
-            like: !like
-        }));
-    }
+    // onToggleLike = () => {
+    //     this.setState(({like}) => ({
+    //         like: !like
+    //     }));
+    // }
 
     render() {
-        const {label, onDelete} = this.props;
-        const {important, like} = this.state;
+        const {label, onDelete, onToogleImportant, onToogleLike, important, like} = this.props;
+        // const {important, like} = this.state;
         let classNames = 'app-list-item d-flex justify-content-between';
         if (important) {
             classNames +=' important';
@@ -44,12 +44,12 @@ export default class PostListitem extends Component {
         return (
             <div className={classNames}>
             <span className="app-list-item-label"
-            onClick={this.onToggleLike}>
+            onClick={onToogleLike}>
                 {label}
             </span>
             <div className="d-flex justify-content-center align-items-center">
                 <button type="button" className="btn-star btn-sm" 
-                onClick={this.onToggleImportant}>
+                onClick={onToogleImportant}>
                     <FontAwesomeIcon icon={faStar} />
                 </button>
 
