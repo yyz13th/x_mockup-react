@@ -57,9 +57,9 @@ export default class PostListitem extends Component {
                 onClick={onDelete}>
                     <FontAwesomeIcon icon={faTrash} />
                 </button>
-                <button type="button" className="btn-heart btn-sm">
+                <p className="btn-heart btn-sm">
                     <FontAwesomeIcon icon={faHeart} size='20px' />
-                </button>
+                </p>
             </div> 
         </div>
         )
